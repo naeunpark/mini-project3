@@ -1,0 +1,159 @@
+{
+    "swagger": "2.0",
+    "info": {
+    "version": "1.0.0",
+    "title": "My mini-project3 CRUD",
+    "description": "My mini-project3 Application API",
+    "license": {
+    "name": "IOD",
+    "url": ""
+    }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+    {
+    "name": "Basketball",
+    "description": "API for palyers and teams in the Basketball sports industry"
+    }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths" : {
+        "/api/teams": {
+            "get": {
+                "tags": ["Teams"],
+                "summary": "Get all teams",
+                "responses": {
+                    "200": {
+                        "description": "This service brings all teams data from DB."
+                    }
+                }
+            }
+        },
+        "/api/teams/create": {
+            "post": {
+                "tags": ["Teams"],
+                "summary": "Add new teams into team DB.",
+                "parameters": [{
+                    "in": "body",
+                    "name": "team",
+                    "description": "The team to create",
+                    "scheme": {
+                        "type": "object"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "This service create a new team."
+                    }
+                }
+            }
+        },
+        "/api/teams/{id}": {
+            "put": {
+                "tags": ["Teams"],
+                "summary": "Update an exist team in player DB.",
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "description": "The team 'id' you want to update"
+                },{
+                    "in": "body",
+                    "name": "team",
+                    "description": "data obj for updating the team",
+                    "scheme": {
+                        "type": "object"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "This service update an exist team chosen by id param."
+                    }
+                }
+            },
+        "delete":{
+            "tags": ["Teams"],
+            "summary": "Delete an exist team in player DB.",
+            "parameters": [{
+                "in": "path",
+                "name": "id",
+                "description": "The team 'id' you want to delete"
+            }],
+            "responses": {
+                "200": {
+                    "description": "This service delete an exist team chosen by id param."
+                }
+            }
+        }
+        },
+        "/api/players": {
+            "get": {
+                "tags": ["Players"],
+                "summary": "Get all players",
+                "responses": {
+                    "200": {
+                        "description": "This service brings all players data from DB."
+                    }
+                }
+            }
+        },
+        "/api/players/create": {
+            "post": {
+                "tags": ["Players"],
+                "summary": "Add new player into player DB.",
+                "parameters": [{
+                    "in": "body",
+                    "name": "player",
+                    "description": "The player to create",
+                    "scheme": {
+                        "type": "object"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "This service create a new player."
+                    }
+                }
+            }
+        },
+        "/api/players/{id}": {
+            "put": {
+                "tags": ["Players"],
+                "summary": "Update an exist player in player DB.",
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "description": "The player 'id' you want to update"
+                },{
+                    "in": "body",
+                    "name": "player",
+                    "description": "data obj for updating the player",
+                    "scheme": {
+                        "type": "object"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "This service update an exist player chosen by id param."
+                    }
+                }
+            },
+        "delete":{
+            "tags": ["Players"],
+            "summary": "Delete an exist player in player DB.",
+            "parameters": [{
+                "in": "path",
+                "name": "id",
+                "description": "The player 'id' you want to delete"
+            }],
+            "responses": {
+                "200": {
+                    "description": "This service delete an exist player chosen by id param."
+                }
+            }
+        }
+        }
+    }
+    }
