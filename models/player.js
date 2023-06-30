@@ -22,7 +22,7 @@ const playerSchema = new Schema({
     height_inches: {type: Number},
     position: {type: String},
     weight_pounds: {type: Number},
-    team_id: {type: String, ref: "players"}
+    team_id: {type: String, ref: "teams"}
 });
 
 module.exports = mongoose.model("players", playerSchema);
